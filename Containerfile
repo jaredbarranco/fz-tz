@@ -24,7 +24,6 @@ WORKDIR /app
 # Copy binary from builder
 COPY --from=builder /fz-tz .
 
-# Port your app listens on (adjust if needed)
-EXPOSE 8080
+EXPOSE 3333
 
 ENTRYPOINT ["./fz-tz"]
