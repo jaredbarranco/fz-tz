@@ -9,6 +9,7 @@ import (
 type Config struct {
 	AppName string
 	AppEnv string
+	GeoApiKey string
 }
 
 func LoadConfig() *Config {
@@ -20,6 +21,8 @@ func LoadConfig() *Config {
 	cfg := &Config{
 		AppName: os.Getenv("APP"),
 		AppEnv: os.Getenv("APP_ENV"),
+		GeoApiKey: os.Getenv("GEO_API_KEY"),
 	}
 	return cfg
 }
+

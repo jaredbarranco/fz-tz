@@ -10,6 +10,8 @@ type TzData struct {
 	AbbreviatedTimezone string `json:"abbreviatedTimezoneCode"`
 	UtcOffsetHours string `json:"utcOffsetHours"`
 	UtcOffsetSeconds int `json:"utcOffsetSeconds"`
+	LocalTime string `json:"localTime"`
+	Iso8601 string `json:"iso8601"`
 }
 
 func GetTzOffset(iso8601Str string, tzStr string) TzData {
@@ -36,5 +38,7 @@ func GetTzOffset(iso8601Str string, tzStr string) TzData {
 		AbbreviatedTimezone: tzAbbrev,
 		UtcOffsetHours: offsetStr,
 		UtcOffsetSeconds: offset,
+		LocalTime: localTime.String(),
+		Iso8601: localTime.Format(time.RFC3339),
 	}
 }
